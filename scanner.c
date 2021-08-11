@@ -1,9 +1,6 @@
 //
 // Created by martin on 8/10/2021.
 //
-
-#include <stdio.h>
-#include <ctype.h>
 #include "scanner.h"
 void get_token(int caracter){
 
