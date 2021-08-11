@@ -1,5 +1,4 @@
 #include <stdio.h>
-#include <stdio.h>
 #include <ctype.h>
 //
 // Created by martin on 8/10/2021.
