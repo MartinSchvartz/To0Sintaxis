@@ -3,7 +3,6 @@
 //
 #include "scanner.h"
 int get_token(){
-    int i = 0;
     int caracter_a_leer;
     int miToken;
     for (int j = 0; j < 100; ++j) {
@@ -20,7 +19,7 @@ int get_token(){
     } else if(!isspace(miToken)){
         ungetc(miToken, stdin);
         caracter_a_leer = getchar();
-
+        int i = 0;
         while (caracter_a_leer != ',' && !isspace(caracter_a_leer) && caracter_a_leer != EOF){
             lexemaCorrespondiente[i] = (char)caracter_a_leer;
             caracter_a_leer = getchar();
