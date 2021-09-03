@@ -2,7 +2,6 @@
 char lexemaCorrespondiente[100];
 int main(void) {
     int token;
-    char lexema[100] = {'\0'};
     token = get_token();
     while (token != FIN_DE_TEXTO){
         switch (token) {
