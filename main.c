@@ -1,5 +1,4 @@
 #include "scanner.h"
-char lexemaCorrespondiente[100];
 int main(void) {
     int token;
     token = get_token();
