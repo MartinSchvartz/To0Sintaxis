@@ -3,7 +3,33 @@
 //
 #include "scanner.h"
 int get_token(){
-    int token;
-    token = getchar();
-    return token;
+    int i = 0;
+    int caracter_a_leer;
+    int miToken;
+    for (int j = 0; j < 100; ++j) {
+        lexemaCorrespondiente[j] = '\0';
+    }
+    miToken = getchar();
+    if (miToken == ','){
+        miToken =  SEPARADOR;
+        lexemaCorrespondiente[0] = ',';
+        return miToken;
+    }else if (miToken == EOF){
+        miToken = FIN_DE_TEXTO;
+        return miToken;
+    } else if(!isspace(miToken)){
+        ungetc(miToken, stdin);
+        caracter_a_leer = getchar();
+
+        while (caracter_a_leer != ',' && !isspace(caracter_a_leer) && caracter_a_leer != EOF){
+            lexemaCorrespondiente[i] = (char)caracter_a_leer;
+            caracter_a_leer = getchar();
+            i++;
+        }
+        ungetc(caracter_a_leer,stdin);
+        miToken = CADENA;
+        return miToken;
+    } else{
+        return miToken;
+    }
 }
